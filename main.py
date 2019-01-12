@@ -13,19 +13,31 @@
 # limitations under the License.
 
 # [START gae_flex_quickstart]
+
 import logging
+import os
 
-from flask import Flask
-
+from flask import Flask, request, render_template,redirect
+from urllib.parse import urljoin
 
 app = Flask(__name__)
 
+app.config['STATIC_URL'] = 'https://storage.googleapis.com/sbhacksv-static-bucket/'
+
 
 @app.route('/')
-def hello():
+def index():
     """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+    return render_template('index.html')
 
+@app.endpoint('static')
+def static(filename):
+    static_url = app.config.get('STATIC_URL')
+
+    if static_url:
+        return redirect(urljoin(static_url, filename))
+
+    return app.send_static_file(filename)
 
 @app.errorhandler(500)
 def server_error(e):
