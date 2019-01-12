@@ -22,7 +22,7 @@ from urllib.parse import urljoin
 
 app = Flask(__name__)
 
-app.config['STATIC_URL'] = 'https://storage.googleapis.com/sbhacksv-static-bucket/'
+app.config['STATIC_URL'] = 'https://storage.googleapis.com/sbhacksv-static-bucket/static/'
 
 
 @app.route('/')
