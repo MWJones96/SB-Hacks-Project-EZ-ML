@@ -8,7 +8,7 @@ def run_model(model, **kwargs):
     if model == "dt":
         return dt.neural_network(**kwargs)
     elif model == "knn":
-        return knn.knn(**kwaargs)
+        return knn.knn(**kwargs)
     elif model == "nn":
         return nn.neural_network(**kwargs)
     elif model == "rf":
