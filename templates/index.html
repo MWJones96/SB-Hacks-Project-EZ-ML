@@ -168,6 +168,7 @@ h3 {
 						<button type="button" id="set-params" class="btn btn-primary" value="Select parameters">Configure parameters</button>
 						</div>
 				</form>
+				<form id="param-form"></form>
 			</div>
 		</div>
 	</main>
@@ -201,11 +202,22 @@ h3 {
 	<script>
 		document.getElementById("set-params").addEventListener("click", function() {
 			var classifier = document.getElementById("selection").value;
-			document.getElementById("main-body").innerHTML += classifier;
 
-			fetch('knn.html')
-				.then(response => response.text())
-				.then(text => console.log(text));
+			if (classifier == "knn")
+			{
+				document.getElementById("param-form").innerHTML = 
+								`<label for="nn-input"><strong>Number of neighbors</strong></label>
+								<input type="input" class="form-control" name="num-neighbors id="nn-input"></input>
+								<label for="leaf-size"><strong>Leaf size</strong></label>
+								<input type="input" class="form-control" name="leaf" id="leaf-size></input>
+								<label for="p-input"><strong>P</strong></label>
+								<input type="input" class="form-control" name="p" id="p-input"></input><br>
+								<input type="submit" class="btn btn-primary" name="submit"></input>`;
+			}
+			else if (classifier == "neural-net")
+			{
+				
+			}
 		});
 	</script>
 </body>
