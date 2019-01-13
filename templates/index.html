@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>{% block title %}Home{% endblock %} - EZ ML</title>
+	<title>EZ ML</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -31,16 +31,16 @@
 .bgimg-1 {
   /* background-image: url("{{url_for('static',filename='img/bigboy1.jpg')}}"); 
   */
-  min-height: 400px;
+  min-height: 100px;
 }
 
 .bgimg-2 {
   background-image: url("{{url_for('static',filename='img/bigboy2.jpg')}}");
-  min-height: 400px;
+  min-height: 50px;
 }
 
 .bgimg-3 {
-  min-height: 400px;
+  min-height: 50px;
 }
 
 .caption {
@@ -65,6 +65,10 @@ h3 {
   text-transform: uppercase;
   font: 20px "Lato", sans-serif;
   color: #111;
+}
+
+.nav-link {
+	color: #fff;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
@@ -124,20 +128,20 @@ h3 {
 					<div class="form-group">
 						<div class="row">
 							<div class="col">
-								<label for="train-data">Choose training data</label>
+								<label for="train-data"><strong>Choose training data</strong></label>
 								<input type="file" class="form-control-file" name="train-data" required>
 							</div>
 							<div class="col">
-								<label for="train-targets">Choose training targets</label>
+								<label for="train-targets"><strong>Choose training targets</strong></label>
 								<input type="file" class="form-control-file" name="train-targets" required>
 							</div>
 							<div class="col">
-								<label for="test-data">Choose test data</label>
+								<label for="test-data"><strong>Choose test data</strong></label>
 								<input type="file" class="form-control-file" name="test-data" required>
 							</div>
 						</div>
 					</div>
-					<label for="selection">Select a classifier</label>
+					<label for="selection"><strong>Select a classifier</strong></label>
 					<select id="selection" class="form-control">
 						<option disabled selected>Choose...</option>
 						<optgroup label="Classifiers">
@@ -152,23 +156,21 @@ h3 {
 						</optgroup>
 					</select><br>
 					<div class="form-group">
-						<label for="email-input">Email address</label>
+						<label for="email-input"><strong>Email address</strong></label>
 						<input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
-						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+						<small id="emailHelp" class="form-text text-muted">Email you a csv file with the target predictions. We'll never share your email with anyone else.</small>
 					</div>
 					<div class="form-group">
-						<label for="phone-input">Phone number</label>
+						<label for="phone-input"><strong>Phone number</strong></label>
 						<input type="tel" class="form-control" id="phone-input" aria-describedby="telHelp" placeholder="Enter Phone Number">
-						<small id="telHelp" class="form-text text-muted">Nor will we share your phone number with anyone else.</small>
+						<small id="telHelp" class="form-text text-muted">Text you when the evaluation is complete. We'll never share your phone number with anyone else.</small><br>
 						<div class="form-group">
-							<input type="submit" name="to-params" class="btn btn-primary" value="Select parameters">
+						<input type="submit" name="to-params" class="btn btn-primary" value="Select parameters">
 						</div>
 				</form>
 			</div>
 		</div>
-
 	</main>
-	{% endblock %}
 
 	<script src="{{url_for('static',filename='js/vendor/modernizr-3.6.0.min.js')}}"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -197,5 +199,4 @@ h3 {
 	);
 	</script>
 </body>
-
 </html>
