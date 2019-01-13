@@ -19,8 +19,11 @@ import os
 
 from flask import Flask, request, render_template,redirect
 from urllib.parse import urljoin
+from ML import models
 
 app = Flask(__name__)
+
+
 
 app.config['STATIC_URL'] = 'https://storage.googleapis.com/sbhacksv-static-bucket/static/'
 
@@ -39,6 +42,17 @@ def static(filename):
 
     return app.send_static_file(filename)
 
+@app.route('train',method='POST')
+def train():
+    modelType = request.args.get('selection', '')    
+    if modelType in ["nn","knn","svm","rf", "dt"]:
+        models.run_model(modelType, request.args)
+        return render_template("success")
+    else:
+        return render_template("failure")
+
+
+
 @app.errorhandler(500)
 def server_error(e):
     logging.exception('An error occurred during a request.')
@@ -46,6 +60,9 @@ def server_error(e):
     An internal error occurred: <pre>{}</pre>
     See logs for full stacktrace.
     """.format(e), 500
+
+
+
 
 
 if __name__ == '__main__':
