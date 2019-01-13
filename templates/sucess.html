@@ -1,0 +1,187 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>EZ ML</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="{{url_for('static',filename='site.webmanifest')}}">
+	<link rel="apple-touch-icon" href="{{url_for('static',filename='icon.png')}}">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" href="{{url_for('static',filename='css/normalize.css')}}">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+
+	{% block customHead %}
+	<style>
+		.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  /* background-image: url("{{url_for('static',filename='img/bigboy1.jpg')}}"); 
+  */
+  min-height: 100px;
+}
+
+.bgimg-3 {
+  min-height: 100px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+
+h3 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #111;
+}
+
+.nav-link {
+	color: #fff;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+
+  </style>
+	{% endblock %}
+<link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<body id="main-body">
+	{% block header %}
+	<header class='navbar navbar-expand-lg bg-dark navbar-dark fixed-top'>
+		<a class="navbar-brand" href="#">EZ ML</a>
+
+		<ul class="nav nav-pills" id="navLinks">
+			<li class="nav-item" active>
+				<a class="nav-link" href="#Home">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#About">About</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#Team">Team</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#Try">Try</a>
+			</li>
+		</ul>
+		</nav>
+	</header>
+	{% endblock %}
+	{% block body %}
+	<main role="main" data-spy="scroll" data-target="nav" data-offset="0" style="position: relative">
+
+		<div class="bgimg-1 anchor" id="Home" style="padding-top: 10rem">
+			<div class="container">
+				<h1 class="text-center">EZ ML</h1>
+				<h3 class="text-center">Build your own Machine Learning model</h3>
+			</div>
+		</div>
+
+		<div class="bgimg-2 anchor" id="About">
+			<div class="container"></div>
+		</div>
+
+		<div class="bgimg-3 anchor" id="Team">
+			<div class="container"></div>
+		</div>
+
+		<div class="bigimg-3 anchor" id="Try"></div>
+			<div class="Jumbotron">Congrats</div>
+			<div>Expect to hear back in a little bit.</div>
+		</div>
+	</main>
+
+	{% endblock %}
+
+	<script src="{{url_for('static',filename='js/vendor/modernizr-3.6.0.min.js')}}"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	 crossorigin="anonymous"></script>
+	<script>window.jQuery || document.write('<script src="{{url_for('static',filename='js / vendor / jquery - 3.3.1.min.js')}}"><\/script>')</script>
+	<script src="{{url_for('static',filename='js/plugins.js')}}"></script>
+	<script src="{{url_for('static',filename='js/main.js')}}"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+	<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+	<script>
+		window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+		ga('create', 'UA-132345519-1', 'auto'); ga('send', 'pageview')
+	</script>
+	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+	<script>
+		document.getElementById("set-params").addEventListener("click", function () {
+			var classifier = document.getElementById("selection").value;
+
+			let paramForm = document.getElementById("param-form");
+
+
+			switch (classifier) {
+				case "knn":
+					paramForm.innerHTML = `{% include 'knn.html' %}`;
+					break;
+				case "neural-net":
+					paramForm.innerHTML = `{% include 'mlp.html' %}`;
+					break;
+				case "dt":
+					paramForm.innerHTML = `{% include 'dt.html' %}`;
+					break;
+				case "svm":
+					paramForm.innerHTML = `{% include 'svm.html' %}`;
+					break;
+				case "rf":
+					paramForm.innerHTML = `{% include 'rf.html' %}`;
+					break;
+				default:
+					break;
+			}
+		});
+	</script>
+
+<script>
+		$(function () {
+			$('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+				// do something…
+				alert(":(");
+			})
+		}
+		);
+	</script>
+</body>
+
+</html>
