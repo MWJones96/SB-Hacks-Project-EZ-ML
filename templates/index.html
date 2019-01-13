@@ -82,7 +82,7 @@ h3 {
 	{% endblock %}
 </head>
 
-<body>
+<body id = "main-body">
 	{% block header %}
 	<header class='navbar navbar-expand-lg bg-dark navbar-dark fixed-top'>
 		<a class="navbar-brand" href="#">EZ ML</a>
@@ -110,7 +110,7 @@ h3 {
 		<div class="bgimg-1 anchor" id="Home" style="padding-top: 10rem">
 			<div class="container">
 				<h1 class="text-center">EZ ML</h1>
-				<h3 class="text-center">Build your own Machine Learning classifier</h3>
+				<h3 class="text-center">Build your own Machine Learning model</h3>
 			</div>
 		</div>
 
@@ -197,6 +197,16 @@ h3 {
 		})
 	}
 	);
+	</script>
+	<script>
+		document.getElementById("set-params").addEventListener("click", function() {
+			var classifier = document.getElementById("selection").value;
+			document.getElementById("main-body").innerHTML += classifier;
+
+			fetch('knn.html')
+				.then(response => response.text())
+				.then(text => console.log(text));
+		});
 	</script>
 </body>
 </html>
