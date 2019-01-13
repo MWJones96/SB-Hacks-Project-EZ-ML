@@ -206,13 +206,13 @@ h3 {
 			if (classifier == "knn")
 			{
 				document.getElementById("param-form").innerHTML = 
-								`Number of neighbors:
-								<input type="input" name="num-neighbors"></input>
-								Leaf size:
-								<input type="input" name="num-neighbors"></input>
-								P:
-								<input type="input" name="num-neighbors"></input>
-								<input type="submit" name="submit"></input>`;
+								`<label for="nn-input"><strong>Number of neighbors</strong></label>
+								<input type="input" class="form-control" name="num-neighbors id="nn-input"></input>
+								<label for="leaf-size"><strong>Leaf size</strong></label>
+								<input type="input" class="form-control" name="leaf" id="leaf-size></input>
+								<label for="p-input"><strong>P</strong></label>
+								<input type="input" class="form-control" name="p" id="p-input"></input><br>
+								<input type="submit" class="btn btn-primary" name="submit"></input>`;
 			}
 			else if (classifier == "neural-net")
 			{
