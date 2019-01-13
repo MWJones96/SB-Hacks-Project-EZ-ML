@@ -1,19 +1,54 @@
-<label for="C">C</label>
-<input type=number class="form-control" name="C" id="C" value=1.0 />
+<div class="row">
+    <div class="col">
+        <label for="C">C</label>
+        <input type=number class="form-control" name="C" id="C" value=1.0 />
+    </div>
+    <div class="col">
 
-<label for="kernel">kernel</label>
-<input type=number class="form-control" name="kernel" id="kernel" value='rbf' />
-<label for="degree">degree</label>
-<input type=number class="form-control" name="degree" id="degree" value=3 />
-<label for="coef0">coef0</label>
-<input type=number class="form-control" name="coef0" id="coef0" value=0.0 />
-<label for="shrinking">shrinking</label>
-<input type=number class="form-control" name="shrinking" id="shrinking" value=True />
-<label for="probability">probability</label>
-<input type=number class="form-control" name="probability" id="probability" value=False />
-<label for="tol">tol</label>
-<input type=number class="form-control" name="tol" id="tol" value=0.001 />
-<label for="cache_size">cache_size</label>
-<input type=number class="form-control" name="cache_size" id="cache_size" value=200 />
-<label for="max_iter">cache_size</label>
-<input type=number class="form-control" name="max_iter" id="max_iter" value=-1 />
+        <label for="kernel">kernel</label>
+        <select class="form-control" name="kernel" id="kernel">
+            <option value='rbf'>RBF</option>
+            <option value='linear'>Linear</option>
+            <option value='poly'>Polynomial</option>
+            <option value="precomputed">Precomputed</option>
+        </select>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+        <label for="degree">Degree</label>
+        <input type=number class="form-control" name="degree" id="degree" value=3 />
+    </div>
+    <div class="col">
+        <label for="coef0">Coef 0</label>
+        <input type=number class="form-control" name="coef0" id="coef0" value=0.0 />
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label for="shrinking">Shrinking</label>
+        <input type=checked class="form-control" name="shrinking" id="shrinking" value=True checked />
+    </div>
+    <div class="col">
+        <label for="probability">Probability</label>
+        <input type=number class="form-control" name="probability" id="probability" value=True checked />
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <label for="tol">tol</label>
+        <input type=number class="form-control" name="tol" id="tol" value=0.001 />
+    </div>
+    <div class="col">
+        <label for="cache_size">Cache Size</label>
+        <input type=number class="form-control" name="cache_size" id="cache_size" value=200 />
+    </div>
+    <div class="col">
+        <label for="max_iter">Maximum iterations</label>
+        <input type=number class="form-control" name="max_iter" id="max_iter" value=-1 />
+    </div>
+</div>
+
+    <input type="submit" value="Submit" />
