@@ -1,5 +1,5 @@
 # SB-Hacks
-SB Hacks project
+SB Hacks project - EZ ML: Build-your-own Machine Learning model
 
 ## Technologies
 Google Cloud Storage as a CDN
