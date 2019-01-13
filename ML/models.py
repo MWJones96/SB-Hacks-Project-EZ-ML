@@ -1,8 +1,8 @@
-import  decision_tree as dt
-import knn as knn
-import neural_net as nn
-import random_forest as rf
-import svm as svm
+from . import decision_tree as dt
+from . import knn as knn
+from . import neural_net as nn
+from . import random_forest as rf
+from . import svm as svm
 
 def run_model(model, **kwargs):
     if model == "dt":

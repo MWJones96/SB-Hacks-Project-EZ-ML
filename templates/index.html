@@ -82,7 +82,7 @@ h3 {
 	{% endblock %}
 </head>
 
-<body id = "main-body">
+<body id="main-body">
 	{% block header %}
 	<header class='navbar navbar-expand-lg bg-dark navbar-dark fixed-top'>
 		<a class="navbar-brand" href="#">EZ ML</a>
@@ -158,20 +158,26 @@ h3 {
 					<div class="form-group">
 						<label for="email-input"><strong>Email address</strong></label>
 						<input type="email" class="form-control" id="email-input" aria-describedby="emailHelp" placeholder="Enter email">
-						<small id="emailHelp" class="form-text text-muted">Email you a csv file with the target predictions. We'll never share your email with anyone else.</small>
+						<small id="emailHelp" class="form-text text-muted">Email you a csv file with the target predictions. We'll never
+							share your email with anyone else.</small>
 					</div>
 					<div class="form-group">
 						<label for="phone-input"><strong>Phone number</strong></label>
 						<input type="tel" class="form-control" id="phone-input" aria-describedby="telHelp" placeholder="Enter Phone Number">
-						<small id="telHelp" class="form-text text-muted">Text you when the evaluation is complete. We'll never share your phone number with anyone else.</small><br>
+						<small id="telHelp" class="form-text text-muted">Text you when the evaluation is complete. We'll never share your
+							phone number with anyone else.</small><br>
 						<div class="form-group">
-						<button type="button" id="set-params" class="btn btn-primary" value="Select parameters">Configure parameters</button>
+							<button type="button" id="set-params" class="btn btn-primary" value="Select parameters">Configure parameters</button>
+						</div>
+						<div class="form-group" id="param-form">
+
 						</div>
 				</form>
-				<form id="param-form"></form>
 			</div>
 		</div>
 	</main>
+
+	{% endblock %}
 
 	<script src="{{url_for('static',filename='js/vendor/modernizr-3.6.0.min.js')}}"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -190,35 +196,39 @@ h3 {
 	</script>
 	<script src="https://www.google-analytics.com/analytics.js" async defer></script>
 
+
 	<script>
-	$(document).onload(function(){
-		$('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
-			  // do something…
-			  alert(":(");
-		})
-	}
-	);
-	</script>
-	<script>
-		document.getElementById("set-params").addEventListener("click", function() {
+		document.getElementById("set-params").addEventListener("click", function () {
 			var classifier = document.getElementById("selection").value;
 
-			if (classifier == "knn")
-			{
-				document.getElementById("param-form").innerHTML = 
-								`<label for="nn-input"><strong>Number of neighbors</strong></label>
-								<input type="input" class="form-control" placeholder="5" name="num-neighbors id="nn-input"></input>
-								<label for="leaf-size"><strong>Leaf size</strong></label>
-								<input type="input" class="form-control" placeholder="30" name="leaf" id="leaf-size></input>
-								<label for="p-input"><strong>P</strong></label>
-								<input type="input" class="form-control" placeholder="2" name="p" id="p-input"></input><br>
-								<input type="submit" class="btn btn-primary" name="submit"></input>`;
-			}
-			else if (classifier == "neural-net")
-			{
-				
+			let paramForm = document.getElementById("param-form");
+
+
+			switch (classifier) {
+				case "knn":
+					paramForm.innerHTML = `{% include 'knn.html' %}`;
+					break;
+				case "neural-net":
+					paramForm.innerHTML = `{% include 'mlp.html' %}`;
+					break;
+				case "dt":
+					paramForm.innerHTML = `{% include 'dt.html' %}`;
+					break;
+				default:
+					break;
 			}
 		});
 	</script>
+
+<script>
+		$(function () {
+			$('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+				// do something…
+				alert(":(");
+			})
+		}
+		);
+	</script>
 </body>
+
 </html>

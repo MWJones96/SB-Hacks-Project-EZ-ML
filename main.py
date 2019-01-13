@@ -42,7 +42,7 @@ def static(filename):
 
     return app.send_static_file(filename)
 
-@app.route('train',method='POST')
+@app.route('/train',methods=['POST'])
 def train():
     modelType = request.args.get('selection', '')    
     if modelType in ["nn","knn","svm","rf", "dt"]:

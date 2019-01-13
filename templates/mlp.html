@@ -1,0 +1,67 @@
+<div class="form-group green-border-focus">
+    <label for="hidden_layer_sizes"><strong>Hidden Layer Sizes</strong></label>
+    <textarea class="form-control" class="form-control" id="hidden_layer_sizes" name="hidden_layer_sizes" form="form">(100,)</textarea>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label for="alpha"><strong>Alpha</strong></label>
+        <input class="form-control" type="number" id="alpha" name="alpha" value=0.0001 />
+    </div>
+
+    <div class="col">
+        <label for="learning_rate_init"><strong>Initial Learning Rate</strong></label>
+        <input class="form-control" type="number" id="learning_rate_init" name="learning_rate_init" value=0.001 />
+    </div>
+    <div class="col">
+        <label for="power_t"><strong>Power of t</strong></label>
+        <input class="form-control" type="number" id="power_t" name="power_t" value=0.5 />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label for="max_iter"><strong>Maximum iterations</strong></label>
+        <input class="form-control" type="number" id="max_iter" name="max_iter" value=200 />
+    </div>
+
+    <div class="col">
+        <label for="tol"><strong>ToL</strong></label>
+        <input class="form-control" type="number" id="tol" name="tol" value=0.0001 />
+    </div>
+    <div class="col">
+        <label for="momentum"><strong>Momentum</strong></label>
+        <input class="form-control" type="number" id="momentum" name="momentum" value=0.9 />
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col">
+        <label for="validation_fraction"><strong>Validation Fraction</strong></label>
+        <input class="form-control" type="number" id="validation_fraction" name="validation_fraction" value=0.1 />
+    </div>
+    <div class="col">
+        <label for="beta_1"><strong>Beta 1</strong></label>
+        <input class="form-control" type="number" id="beta_1" name="beta_1" value=0.9 />
+    </div>
+    <div class="col">
+        <label for="beta_2"><strong>Beta 2</strong></label>
+        <input class="form-control" type="number" id="beta_2" name="beta_2" value=0.999 />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label for="epsilon"><strong>Epsilon</strong></label>
+        <input class="form-control" type="number" id="epsilon" name="epsilon" value=1e-08 />
+    </div>
+    <div class="col">
+        <label for="n_iter_no_change">Max iterations without Change</label>
+        <input class="form-control" type="number" id="n_iter_no_change" name="n_iter_no_change" value=10 />
+    </div>
+    <div class="col">
+        <label for="shuffle"><strong>Shuffle</strong></label>
+        <input class="form-control" type="checkbox" id="shuffle" name="shuffle" value=True />
+    </div>
+</div>
